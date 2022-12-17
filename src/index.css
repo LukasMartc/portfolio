@@ -57,9 +57,14 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    padding: 0 15px;
 }
 
 .box-image:hover > .layer {
     opacity: 1;
     visibility: visible;
+}
+
+.link:hover {
+    color: rgb(216, 180, 254);
 }
