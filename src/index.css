@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.whitespace-nowrap {    
+    background: linear-gradient(to right, #83d3fe,#e583fc);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #b2adfe;  
+}
+
+.bg-header {
+    background: repeating-linear-gradient(-45deg, #fbea22 0%, #fbea22 30%, #111827 0, #111827 100%);
+}
+
+.background {
+    background-color: #fbea22;
+}
+
+.dimension-height {
+    height: 10rem;
+}
+
+@media (max-width: 640px) {
+    .dimension-height {
+        height: 8rem;
+    }
+}
+
+.box-image {
+    position: relative;
+    height: 250px;
+    width: 386px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, .5);
+    cursor: pointer;
+}
+
+.img-projects {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-image:hover > .layer {
+    opacity: 1;
+    visibility: visible;
+}
