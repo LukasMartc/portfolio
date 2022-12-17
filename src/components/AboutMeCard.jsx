@@ -30,7 +30,7 @@ const AboutMeCard = ({ tag, icon }) => {
         </p>
       ) || tag === "formation" && (
         <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
-          Realicé el Bootcamp de programación de la Universidad del Desarrollo, Full Stack MERN, en donde trabajamos utilizando metodología Agile/Scrum. Pude realizar varios proyectos tanto de manera grupal como individual, respetando siempre los plazos de entrega y realizando reuniones de retroalimentación.
+          Realicé el Bootcamp de programación de la Universidad del Desarrollo, Full Stack MERN. Pude realizar varios proyectos tanto de manera grupal como individual, respetando siempre los plazos de entrega y realizando reuniones de retroalimentación.
         </p>
       ) || tag === "softSkills" && (
         <ul className="mb-3 font-normal text-gray-500 dark:text-gray-400 leading-8">
