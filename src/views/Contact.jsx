@@ -30,9 +30,10 @@ const Contact = () => {
                 Mensaje
               </label>
               <textarea 
+                type='text'
                 id='message'
                 placeholder="Escribe tu mensaje acá ..."
-                className="w-full h-36 rounded shadow-xl placeholder:p-2 text-lg"
+                className="w-full h-36 rounded text shadow-xl placeholder:p-2 text-lg"
               />
             </div>
             <input 

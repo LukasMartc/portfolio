@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import AboutMe from './views/AboutMe'

@@ -9,6 +9,13 @@
     color: #b2adfe;  
 }
 
+.sticky {
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, .5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .bg-header {
     background: repeating-linear-gradient(-45deg, #fbea22 0%, #fbea22 30%, #111827 0, #111827 100%);
 }
