@@ -1,25 +1,27 @@
-import { Fragment } from 'react'
-import Footer from './components/Footer'
-import NavBar from './components/NavBar'
-import AboutMe from './views/AboutMe'
-import Contact from './views/Contact'
-import Header from './views/Header'
-import Projects from './views/Projects'
-import Skills from './views/Skills'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import { SkillsProvider } from './context/SkillsProvider'
+import { ProjectsProvider } from './context/ProjectsProvider'
+import { AuthProvider } from './context/AuthProvider'
 
 function App() {
   return (
-    <Fragment>
-      <NavBar />
-      <Header />
-      <div className='background'>
-        <AboutMe />
-        <Skills />
-      </div>
-      <Projects />
-      <Contact />
-      <Footer />
-    </Fragment>
+    <BrowserRouter>
+      <AuthProvider>
+        <SkillsProvider>
+          <ProjectsProvider>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/login' element={<Login />} />
+            </Routes>
+          </ProjectsProvider>
+        </SkillsProvider>
+      </AuthProvider>
+    </BrowserRouter>
+    
+      
+    
   )
 }
 
