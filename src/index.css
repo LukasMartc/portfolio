@@ -25,10 +25,6 @@
     height: calc(100vh - 80px);
 }
 
-#about-me {
-    background: repeating-linear-gradient(-45deg, #fbea22 0%, #fbea22 43.%, #111827 0, #111827 100%);
-}
-
 .dimension-height {
     height: 10rem;
 }
