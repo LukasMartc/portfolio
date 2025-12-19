@@ -5,7 +5,7 @@ const Technology = ({ title, icon, skills }) => {
   return (
     <div className="w-60 xl:w-80 lg:w-72 sm:w-96">
         <div className="tech flex justify-center items-center">
-          <img src={icon} />
+          <img src={icon} className="w-14 h-12 object-contain" alt={title}/>
         </div>
         <div className="rounded h-auto overflow-hidden shadow-2xl lg:h-80">
           <div className="mt-16 px-6 py-4">

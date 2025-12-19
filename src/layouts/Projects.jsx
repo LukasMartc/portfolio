@@ -29,7 +29,7 @@ const Projects = () => {
         )}
       </div>
       <div className="container flex items-center justify-center mx-auto mt-6 flex-col">
-        <article className="grid grid-cols-1 w-11/12 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <article className="grid grid-cols-1 w-full md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map(project => (
             <Project 
               key={project._id}

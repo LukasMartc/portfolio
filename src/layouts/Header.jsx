@@ -15,7 +15,7 @@ const Header = () => {
           <div className='py-3'>
             <Link 
               to="contact" 
-              className="relative mr-6 inline-flex text-sm items-center justify-center w-25 px-6 py-3 overflow-hidden font-bold text-white rounded-md shadow-2xl group bg-gradient-to-br from-cyan-200 via-purple-400 to-fuchsia-400 sm:w-40"
+              className="relative mr-6 inline-flex cursor-pointer text-sm items-center justify-center w-25 px-6 py-3 overflow-hidden font-bold text-white rounded-md shadow-2xl group bg-gradient-to-br from-cyan-200 via-purple-400 to-fuchsia-400 sm:w-40"
               spy={true} 
               smooth={true} 
               offset={-78} 
