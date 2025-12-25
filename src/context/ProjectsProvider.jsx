@@ -9,6 +9,7 @@ const ProjectsProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
   const [edit, setEdit] = useState(false);
   const [project, setProject] = useState({});
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getProjects = async () => {
@@ -16,11 +17,14 @@ const ProjectsProvider = ({ children }) => {
         const { data } = await clientAxios('/projects');
         setProjects(data);
       } catch (error) {
-        console.log(error)
+        console.log(error);
+      } finally {
+        setLoading(false);
       }
     }
+
     getProjects();
-  }, [])
+  }, []);
 
   const showAlert = alert => {
     setAlert(alert)
@@ -130,6 +134,7 @@ const ProjectsProvider = ({ children }) => {
     <ProjectsContext.Provider
       value={{
         projects,
+        loading,
         showAlert,
         alert,
         showModal,

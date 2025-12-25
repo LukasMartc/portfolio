@@ -9,18 +9,22 @@ const SkillsProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
   const [edit, setEdit] = useState(false);
   const [tech, setTech] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-        const getSkills = async () => {
-            try {
-                const { data } = await clientAxios('/technology');
-                setSkills(data);
-            } catch (error) {
-                console.log(error)
-            }
-        } 
-        getSkills();
-  }, [])
+    const getSkills = async () => {
+      try {
+        const { data } = await clientAxios('/technology');
+        setSkills(data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getSkills();
+  }, []);
 
   const showAlert = alert => {
     setAlert(alert)
@@ -132,6 +136,7 @@ const SkillsProvider = ({ children }) => {
     <SkillsContext.Provider
       value={{
         skills,
+        loading,
         setSkills,
         showAlert,
         alert,

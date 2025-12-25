@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Technology from "../components/Technology";
 import Frontend from "../assets/skills/frontend.svg";
 import Backend from "../assets/skills/backend.svg";
@@ -11,7 +10,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../components/Modal";
 
 const Skills = () => {
-  const { skills, showModal, setShowModal } = useSkills();
+  const { skills, loading, showModal, setShowModal } = useSkills();
   const { auth } = useAuth();
 
   const skillsFrontend = skills.filter(skill => skill.category === "frontend");
@@ -51,27 +50,31 @@ const Skills = () => {
 
       <div className="flex justify-center items-center container mx-auto">
         <div className="grid grid-cols-1 mx-auto gap-5 text-white lg:grid-cols-4">
-          <Technology
-            title="Frontend"
-            icon={Frontend}
-            skills={skillsFrontend}
-          />
-          <Technology
-            title="Backend"
-            icon={Backend}
-            skills={skillsBackend}
-          />
-          <Technology
-            title="Bases de Datos"
-            icon={Database}
-            skills={skillsDatabase}
-          />
-          <Technology
-            title="Herramientas"
-            icon={Tools}
-            skills={skillsTools}
-          />
+          {loading ? (
+            [...Array(4)].map((_, i) => (
+              <div
+                key={i}
+                className="w-60 xl:w-80 lg:w-72 sm:w-96"
+              >
+                {/* Icon skeleton */}
+                <div className="flex justify-center items-center mb-4">
+                  <div className="animate-pulse bg-gray-700/60 w-14 h-12 rounded" />
+                </div>
+
+                {/* Card skeleton */}
+                <div className="animate-pulse bg-gray-800 h-80 rounded-xl" />
+              </div>
+            ))
+          ) : (
+            <>
+              <Technology title="Frontend" icon={Frontend} skills={skillsFrontend} />
+              <Technology title="Backend" icon={Backend} skills={skillsBackend} />
+              <Technology title="Bases de Datos" icon={Database} skills={skillsDatabase} />
+              <Technology title="Herramientas" icon={Tools} skills={skillsTools} />
+            </>
+          )}
         </div>
+
       </div>
     </section>
   );

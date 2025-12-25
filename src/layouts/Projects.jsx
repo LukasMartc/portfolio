@@ -7,7 +7,7 @@ import ModalProjects from '../components/ModalProjects'
 
 const Projects = () => {
   const { auth } = useAuth();
-  const { projects, showModal, setShowModal } = useProjects();
+  const { projects, loading, showModal, setShowModal } = useProjects();
 
   return (
     <section id="projects" className='bg-gray-900 px-10 py-14 xl:px-32'>
@@ -30,14 +30,25 @@ const Projects = () => {
       </div>
       <div className="container flex items-center justify-center mx-auto mt-6 flex-col">
         <article className="grid grid-cols-1 w-full md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map(project => (
-            <Project 
-              key={project._id}
-              project={project}
-              admin={auth.admin}
-            />
-          ))}
+          {loading ? (
+            [...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className="animate-pulse bg-gray-800 h-56 rounded-xl"
+              />
+            ))
+          ) : (
+            projects.map(project => (
+              <Project 
+                key={project._id}
+                project={project}
+                admin={auth.admin}
+              />
+            ))
+          )}
         </article>
+
+
       </div>
     </section>
   )
